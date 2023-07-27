@@ -73,7 +73,8 @@ extensions = [
     'nbsphinx',
     'nbsphinx_link',
     'sphinx.ext.todo',
-    'sphinx.ext.autosectionlabel'
+    'sphinx.ext.autosectionlabel',
+    'sphinx_gallery.gen_gallery',
 ]
 
 napoleon_google_docstring = True
@@ -235,6 +236,11 @@ autodoc_mock_imports = [
 
 sys.modules['deepcell.utils.compute_overlap'] = mock.Mock()
 sys.modules['tensorflow.keras.layers.convolutional_recurrent.ConvRNN2D'] = mock.Mock()
+
+sphinx_gallery_conf = {
+    "examples_dirs": ["../dataset_gallery"],
+    "gallery_dirs": ["datasets_gallery"],
+}
 
 # Disable nbsphinx extension from running notebooks
 nbsphinx_execute = 'never'
